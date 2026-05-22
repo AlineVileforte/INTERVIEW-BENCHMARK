@@ -1,0 +1,224 @@
+{
+  "nomeProcesso": "Land Application Investigation Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Land Administration",
+  "descricaoBreve": "Processo paralelo de verificações de terreno e finalização do resultado.",
+  "Atividades": [
+    {
+      "nome": "Start",
+      "id": "E1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Determine any land action planned",
+      "id": "T1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Title administrative check",
+      "id": "T2",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Native title check",
+      "id": "T3",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Parcel check",
+      "id": "T4",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Land valuation check",
+      "id": "T5",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Survey plan registration check",
+      "id": "T6",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Finalize check result",
+      "id": "T7",
+      "tipo": "Task"
+    },
+    {
+      "nome": "End",
+      "id": "E2",
+      "tipo": "Event"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T4"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T5"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T6"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T3"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T4"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T5"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "E2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T7"
+        }
+      ]
+    }
+  ]
+}

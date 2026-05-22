@@ -1,0 +1,7 @@
+This process represents a land application investigation workflow used to perform multiple parallel verification activities related to land ownership, valuation, registration, and legal status. The process begins when a land investigation application is initiated.
+
+After the process starts, the workflow simultaneously executes several independent verification tasks through a parallel gateway structure. These activities include determining any planned land actions, performing title administrative checks, executing native title checks, validating parcel information, conducting land valuation checks, and verifying survey plan registration data.
+
+Each verification activity analyzes a different legal, administrative, or valuation aspect of the land application. All checks must be completed before the process can continue.
+
+Once every investigation activity has finished, the workflow consolidates the collected information and finalizes the check result. The process then concludes after the complete investigation report is finalized.

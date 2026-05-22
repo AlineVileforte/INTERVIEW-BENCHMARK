@@ -1,0 +1,190 @@
+{
+  "nomeProcesso": "Purchase Order Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Supply Chain Management",
+  "descricaoBreve": "Processo de verificação de estoque, confirmação de pedido, envio de produto e fatura.",
+  "Atividades": [
+    {
+      "nome": "Start",
+      "id": "E1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Check Inventory",
+      "id": "T1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Inventory Available",
+      "id": "T2",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Inventory Not Available",
+      "id": "T3",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Reject Purchase order",
+      "id": "T4",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Confirm Purchase Order",
+      "id": "T5",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Shipp Product",
+      "id": "T6",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Send Invoice",
+      "id": "T7",
+      "tipo": "Task"
+    },
+    {
+      "nome": "End Reject",
+      "id": "E2",
+      "tipo": "Event"
+    },
+    {
+      "nome": "End Success",
+      "id": "E3",
+      "tipo": "Event"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T4"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T3"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "E2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T4"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T5"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T6"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T5"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T5"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "E3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "E3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T7"
+        }
+      ]
+    }
+  ]
+}
