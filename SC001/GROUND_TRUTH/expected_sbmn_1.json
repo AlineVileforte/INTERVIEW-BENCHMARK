@@ -1,0 +1,105 @@
+{
+  "nomeProcesso": "Send Account Documents",
+  "versao": "1.0",
+  "dominioAplicacao": "Banking",
+  "descricaoBreve": "Process of sending PIN, TANs, and Card to bank customer by mail and customer receiving those items in sequence.",
+  "Atividades": [
+    {
+      "nome": "Mail Pin",
+      "id": "MP1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Pin",
+      "id": "Pin1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Mail TANs",
+      "id": "MT1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "TANs",
+      "id": "TANs1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Mail Card",
+      "id": "MC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Card",
+      "id": "Card1",
+      "tipo": "Event"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "Pin1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "MP1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "MT1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "Pin1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "TANs1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "MT1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "MC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "TANs1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "Card1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "MC1"
+        }
+      ]
+    }
+  ]
+}
