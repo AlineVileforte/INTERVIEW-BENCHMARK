@@ -1,0 +1,360 @@
+{
+  "nomeProcesso": "Cinema Reservation and Customer Registration Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Entertainment",
+  "descricaoBreve": "Processo de prenotazione, registrazione cliente e gestione questionario di gradimento.",
+  "Atividades": [
+    {
+      "nome": "attivazione sistema informativo",
+      "id": "E1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Il cliente si connette al sistema informativo",
+      "id": "T1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Scelta del tipo di ricerca da effettuare",
+      "id": "T2",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione del film",
+      "id": "T3",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione dell'orario",
+      "id": "T4",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione della sala",
+      "id": "T5",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione del film e dell'orario",
+      "id": "T6",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione della sala e dell'orario",
+      "id": "T7",
+      "tipo": "Task"
+    },
+    {
+      "nome": "selezione del film e della sala",
+      "id": "T8",
+      "tipo": "Task"
+    },
+    {
+      "nome": "riassunto della selezione",
+      "id": "T9",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Il cliente è già registrato?",
+      "id": "T10",
+      "tipo": "Task"
+    },
+    {
+      "nome": "effettua il Login",
+      "id": "T11",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Effettua Registrazione",
+      "id": "SP1",
+      "tipo": "Subprocess"
+    },
+    {
+      "nome": "prenotazione",
+      "id": "T12",
+      "tipo": "Task"
+    },
+    {
+      "nome": "decisione del pagamento",
+      "id": "T13",
+      "tipo": "Task"
+    },
+    {
+      "nome": "conferma prenotazione con invio di e-mail",
+      "id": "T14",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Gestione questionario di gradimento",
+      "id": "SP2",
+      "tipo": "Subprocess"
+    },
+    {
+      "nome": "End",
+      "id": "E2",
+      "tipo": "Event"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "E1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T4"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T5"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T6"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T5"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T3"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T8"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T4"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T9"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T9"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T7"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T9"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T8"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T10"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T9"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T11"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T10"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SP1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T10"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T12"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T11"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T12"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SP1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T13"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T12"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T14"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T13"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SP2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T14"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "E2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SP2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "nomeProcesso": "Reservation Management Process",
+  "versao": "1.0",
+  "dominioAplicacao": "",
+  "descricaoBreve": "Reservation System",
+  "Atividades": [
+    {
+      "nome": "Start",
+      "id": "Start1",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Kontrola přihlášení",
+      "id": "T1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Zadani rezervace",
+      "id": "T2",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Kontrola dostupnosti",
+      "id": "T3",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Dotaz na upravu pozadavku",
+      "id": "T4",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Uprava pozadavku",
+      "id": "T5",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Potrvzeni o prijeti objednavky",
+      "id": "T6",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Ulozeni do DB",
+      "id": "T7",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Odeslani potvrzovaciho emailu",
+      "id": "T8",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Odeslani emailu o ...",
+      "id": "T9",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Odeslani emailu o ...",
+      "id": "T10",
+      "tipo": "Task"
+    },
+    {
+      "nome": "End",
+      "id": "End1",
+      "tipo": "Event"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "Start1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T4"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T3"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T5"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T4"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T3"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T5"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T6"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T3"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T8"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T7"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "End1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T8"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T9"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "End1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T9"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T10"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T6"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "End1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T10"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "T1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "T1"
+        }
+      ]
+    }
+  ]
+}
