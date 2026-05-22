@@ -1,0 +1,409 @@
+{
+  "fragments": [
+    {
+      "id": "Default_init",
+      "type": "START_EVENT",
+      "branch": "0.0.",
+      "inComing": [],
+      "outComing": [
+        "Par0"
+      ]
+    },
+    {
+      "id": "Par0",
+      "name": "PAR",
+      "type": "PARALLEL_GATEWAY",
+      "branch": "0.0.",
+      "inComing": [
+        "Default_init"
+      ],
+      "outComing": [
+        "CC1",
+        "SCC1"
+      ]
+    },
+    {
+      "id": "CC1",
+      "name": "Check Customer",
+      "type": "TASK",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "Par0"
+      ],
+      "outComing": [
+        "G0"
+      ]
+    },
+    {
+      "id": "SCC1",
+      "name": "Sending Confirmation to Customer",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "Par0"
+      ],
+      "outComing": [
+        "GRD1"
+      ]
+    },
+    {
+      "id": "G0",
+      "name": "G0",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "CC1"
+      ],
+      "outComing": [
+        "CPH1",
+        "CCT1"
+      ]
+    },
+    {
+      "id": "CPH1",
+      "name": "Check Payment History",
+      "type": "TASK",
+      "branch": "0.0.1.1.1.1.",
+      "inComing": [
+        "G0"
+      ],
+      "outComing": [
+        "XORCLOSE10"
+      ]
+    },
+    {
+      "id": "GRD1",
+      "name": "Getting ready for delivery",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "SCC1"
+      ],
+      "outComing": [
+        "PTG1"
+      ]
+    },
+    {
+      "id": "CCT1",
+      "name": "Check Customer Type",
+      "type": "TASK",
+      "branch": "0.0.1.1.1.2.",
+      "inComing": [
+        "G0"
+      ],
+      "outComing": [
+        "XORCLOSE10"
+      ]
+    },
+    {
+      "id": "PTG1",
+      "name": "Pack the Goods",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "GRD1"
+      ],
+      "outComing": [
+        "DTG1"
+      ]
+    },
+    {
+      "id": "DTG1",
+      "name": "Deliver the Goods",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "PTG1"
+      ],
+      "outComing": [
+        "PI1"
+      ]
+    },
+    {
+      "id": "XORCLOSE10",
+      "name": "XORCLOSE10",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.1.1.",
+      "inComing": [
+        "CPH1",
+        "CCT1"
+      ],
+      "outComing": [
+        "G4"
+      ]
+    },
+    {
+      "id": "PI1",
+      "name": "Preparing Invoice",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "DTG1"
+      ],
+      "outComing": [
+        "SIC1"
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "G4",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "XORCLOSE10"
+      ],
+      "outComing": [
+        "CNC1",
+        "DM1"
+      ]
+    },
+    {
+      "id": "CNC1",
+      "name": "Create New Customer",
+      "type": "TASK",
+      "branch": "0.0.1.1.1.2.",
+      "inComing": [
+        "G4"
+      ],
+      "outComing": [
+        "XORCLOSE20"
+      ]
+    },
+    {
+      "id": "SIC1",
+      "name": "Send the Invoice invoice to customer",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "PI1"
+      ],
+      "outComing": [
+        "XOR_JMPBB_CTR1_CFP1"
+      ]
+    },
+    {
+      "id": "CFP1",
+      "name": "Check for Payment",
+      "type": "TASK",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "XOR_JMPBB_CTR1_CFP1"
+      ],
+      "outComing": [
+        "G5"
+      ]
+    },
+    {
+      "id": "DM1",
+      "name": "Declining Message",
+      "type": "TASK",
+      "branch": "0.0.1.1.1.1.",
+      "inComing": [
+        "G4"
+      ],
+      "outComing": [
+        "XORCLOSE20"
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "G5",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "CFP1"
+      ],
+      "outComing": [
+        "CO1",
+        "CTR1"
+      ]
+    },
+    {
+      "id": "CO1",
+      "name": "Closing Order",
+      "type": "TASK",
+      "branch": "0.0.1.2.1.1.",
+      "inComing": [
+        "G5"
+      ],
+      "outComing": [
+        "XORCLOSE31"
+      ]
+    },
+    {
+      "id": "XORCLOSE20",
+      "name": "XORCLOSE20",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.1.2.",
+      "inComing": [
+        "CNC1",
+        "DM1"
+      ],
+      "outComing": [
+        "CA1"
+      ]
+    },
+    {
+      "id": "CTR1",
+      "name": "Checking the reminders",
+      "type": "TASK",
+      "branch": "0.0.1.2.1.2.",
+      "inComing": [
+        "G5"
+      ],
+      "outComing": [
+        "XOR_JMPAA_CTR1_CFP1"
+      ]
+    },
+    {
+      "id": "CA1",
+      "name": "Check Availability",
+      "type": "TASK",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "XORCLOSE20"
+      ],
+      "outComing": [
+        "G7"
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "G6",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.1.2.",
+      "inComing": [
+        "XOR_JMPAA_CTR1_CFP1"
+      ],
+      "outComing": [
+        "DP1",
+        "XORCLOSE29"
+      ]
+    },
+    {
+      "id": "DP1",
+      "name": "Dunning Process",
+      "type": "TASK",
+      "branch": "0.0.1.2.1.2.1.1.",
+      "inComing": [
+        "G6"
+      ],
+      "outComing": [
+        "XORCLOSE29"
+      ]
+    },
+    {
+      "id": "G7",
+      "name": "G7",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "CA1"
+      ],
+      "outComing": [
+        "PMG1",
+        "XORCLOSE30"
+      ]
+    },
+    {
+      "id": "PMG1",
+      "name": "Producing Missing Goods",
+      "type": "TASK",
+      "branch": "0.0.1.1.1.1.",
+      "inComing": [
+        "G7"
+      ],
+      "outComing": [
+        "XORCLOSE30"
+      ]
+    },
+    {
+      "id": "XORCLOSE29",
+      "name": "XORCLOSE29",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.1.2.1.1.",
+      "inComing": [
+        "DP1",
+        "G6"
+      ],
+      "outComing": [
+        "XORCLOSE31"
+      ]
+    },
+    {
+      "id": "XORCLOSE30",
+      "name": "XORCLOSE30",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.1.1.1.",
+      "inComing": [
+        "PMG1",
+        "G7"
+      ],
+      "outComing": [
+        "PARCLOSE32"
+      ]
+    },
+    {
+      "id": "XORCLOSE31",
+      "name": "XORCLOSE31",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.1.1.",
+      "inComing": [
+        "CO1",
+        "XORCLOSE29"
+      ],
+      "outComing": [
+        "PARCLOSE32"
+      ]
+    },
+    {
+      "id": "PARCLOSE32",
+      "name": "PARCLOSE32",
+      "type": "PARALLEL_GATEWAY",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "XORCLOSE30",
+        "XORCLOSE31"
+      ],
+      "outComing": [
+        "END"
+      ]
+    },
+    {
+      "id": "END",
+      "name": "END_EVENT",
+      "type": "END_EVENT",
+      "branch": "0.0.1.1.",
+      "inComing": [
+        "PARCLOSE32"
+      ],
+      "outComing": []
+    },
+    {
+      "id": "XOR_JMPAA_CTR1_CFP1",
+      "name": "XOR_JMPAA_Checking the reminders",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.1.2.",
+      "inComing": [
+        "CTR1"
+      ],
+      "outComing": [
+        "G6",
+        "XOR_JMPBB_CTR1_CFP1"
+      ]
+    },
+    {
+      "id": "XOR_JMPBB_CTR1_CFP1",
+      "name": "XOR_JMPBB_Check for Payment",
+      "type": "EXCLUSIVE_GATEWAY",
+      "branch": "0.0.1.2.",
+      "inComing": [
+        "SIC1",
+        "XOR_JMPAA_CTR1_CFP1"
+      ],
+      "outComing": [
+        "CFP1"
+      ]
+    }
+  ]
+}

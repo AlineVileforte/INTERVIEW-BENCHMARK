@@ -1,0 +1,324 @@
+EXECUTE
+
+User: ENGLISH
+User: 
+1. Order Fulfillment and Customer Management Process
+2. Sales and Logistics
+3. 
+Check Customer
+Check Payment History
+Check Customer Type
+Declining Message
+Create New Customer
+Check Availability
+Producing Missing Goods 
+Sending Confirmation to Customer
+Getting ready for delivery
+Pack the Goods 
+Deliver the Goods 
+Preparing Invoice 
+Send the Invoice invoice to customer
+Check for Payment 
+Closing Order 
+Checking the reminders
+Dunning Process
+
+Can “Check Payment History” occur without “Check Customer” occurring at some point in the same process execution?
+
+User: no
+
+When “Check Payment History” occurs, must “Check Customer” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Check Customer” occurs but “Check Payment History” does not occur?
+
+User: YES
+
+Can “Check Customer Type” occur without “Check Payment History” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Check Payment History” occur without “Check Customer Type” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Check Payment History” and “Check Customer Type” occur together in the same process execution?
+
+User: NO
+
+Can “Declining Message” occur without “Check Customer Type” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Check Customer Type” occur without “Declining Message” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Declining Message” and “Check Customer Type” occur together in the same process execution?
+
+User: YES
+
+When “Declining Message” occurs, must “Check Customer Type” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Check Customer Type” occurs but “Declining Message” does not occur?
+
+User: YES
+
+Can “Create New Customer” occur without “Check Customer Type” occurring at some point in the same process execution?
+
+User: NO
+
+When “Create New Customer” occurs, must “Check Customer Type” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Check Customer Type” occurs but “Create New Customer” does not occur?
+
+User: YES
+
+Can “Check Availability” occur without “Create New Customer” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Create New Customer” occur without “Check Availability” occurring at some point in the same process execution?
+
+User: NO
+
+When “Create New Customer” occurs, must “Check Availability” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: AFTER
+
+Are there valid executions of the process where “Check Availability” occurs but “Create New Customer” does not occur?
+
+User: YES
+
+Can “Producing Missing Goods” occur without “Check Availability” occurring at some point in the same process execution?
+
+User: NO
+
+When “Producing Missing Goods” occurs, must “Check Availability” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Check Availability” occurs but “Producing Missing Goods” does not occur?
+
+User: YES
+
+Can “Sending Confirmation to Customer” occur without “Producing Missing Goods” occurring at some point in the same process execution?
+
+User: YES
+
+Can “Producing Missing Goods” occur without “Sending Confirmation to Customer” occurring at some point in the same process execution?
+
+NO
+
+User: NO
+
+When “Producing Missing Goods” occurs, must “Sending Confirmation to Customer” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: can both occur in any order depending
+
+Can “Getting ready for delivery” occur without “Sending Confirmation to Customer” occurring at some point in the same process execution?
+
+User: NO
+
+When “Getting ready for delivery” occurs, must “Sending Confirmation to Customer” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Sending Confirmation to Customer” occurs but “Getting ready for delivery” does not occur?
+
+User: NO
+
+Can “Pack the Goods” occur without “Getting ready for delivery” occurring at some point in the same process execution?
+
+User: NO
+
+When “Pack the Goods” occurs, must “Getting ready for delivery” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Getting ready for delivery” occurs but “Pack the Goods” does not occur?
+
+User: NO
+
+Can “Deliver the Goods” occur without “Pack the Goods” occurring at some point in the same process execution?
+
+User: NO
+
+When “Deliver the Goods” occurs, must “Pack the Goods” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+BEFORE
+
+User: BEFORE
+
+Are there valid executions of the process where “Pack the Goods” occurs but “Deliver the Goods” does not occur?
+
+User: NO
+
+Can “Preparing Invoice” occur without “Deliver the Goods” occurring at some point in the same process execution?
+
+User: NO
+
+When “Preparing Invoice” occurs, must “Deliver the Goods” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: can both occur in any order depending
+
+Are there valid executions of the process where “Deliver the Goods” occurs but “Preparing Invoice” does not occur?
+
+User: NO
+
+Can “Send the Invoice invoice to customer” occur without “Preparing Invoice” occurring at some point in the same process execution?
+
+NO
+
+User: NO
+
+When “Send the Invoice invoice to customer” occurs, must “Preparing Invoice” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+BEFORE
+
+User: BEFORE
+
+Are there valid executions of the process where “Preparing Invoice” occurs but “Send the Invoice invoice to customer” does not occur?
+
+NO
+
+User: NO
+
+Can “Check for Payment” occur without “Send the Invoice invoice to customer” occurring at some point in the same process execution?
+
+NO
+
+User: NO
+
+When “Check for Payment” occurs, must “Send the Invoice invoice to customer” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+BEFORE
+
+User: BEFORE
+
+Are there valid executions of the process where “Send the Invoice invoice to customer” occurs but “Check for Payment” does not occur?
+
+User: NO
+
+Can “Closing Order” occur without “Check for Payment” occurring at some point in the same process execution?
+
+NO
+
+User: NO
+
+When “Closing Order” occurs, must “Check for Payment” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+BEFORE
+
+User: BEFORE
+
+Are there valid executions of the process where “Check for Payment” occurs but “Closing Order” does not occur?
+
+YES
+
+User: YES
+
+Can “Checking the reminders” occur without “Check for Payment” occurring at some point in the same process execution?
+
+NO
+
+User: NO
+
+When “Checking the reminders” occurs, must “Check for Payment” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+BEFORE
+
+User: BEFORE
+
+Are there valid executions of the process where “Check for Payment” occurs but “Checking the reminders” does not occur?
+
+YES
+
+User: YES
+
+Can “Closing Order” and “Checking the reminders” occur together in the same process execution?
+
+User: YES
+
+Are valid executions possible with:
+
+- only “Closing Order”,
+- only “Checking the reminders”,
+- and both?
+
+User: only “Closing Order”,
+only “Checking the reminders”,
+and both
+
+Can “Dunning Process” occur without “Checking the reminders” occurring at some point in the same process execution?
+
+User: NO
+
+When “Dunning Process” occurs, must “Checking the reminders” occur BEFORE, AFTER, or can both occur in any order depending on the execution?
+
+User: BEFORE
+
+Are there valid executions of the process where “Checking the reminders” occurs but “Dunning Process” does not occur?
+
+YES
+
+User: YES
+
+After completing any activity, can the process return to or skip directly to another non-adjacent activity?
+
+User: YES. "CHECKING THE REMINDERS" RETURN "CHECK FOR PAYMENT"
+
+After “Checking the reminders”, can the process return directly to “Check for Payment”?
+
+User: YES
+
+Process name: Order Fulfillment and Customer Management Process
+Domain: Sales and Logistics
+Activities:
+- Check Customer
+- Check Payment History
+- Check Customer Type
+- Declining Message
+- Create New Customer
+- Check Availability
+- Producing Missing Goods
+- Sending Confirmation to Customer
+- Getting ready for delivery
+- Pack the Goods
+- Deliver the Goods
+- Preparing Invoice
+- Send the Invoice invoice to customer
+- Check for Payment
+- Closing Order
+- Checking the reminders
+- Dunning Process
+
+SBMN Relations:
+
+Check Payment History REQ Check Customer
+Check Payment History XOR Check Customer Type
+Declining Message REQ Check Customer Type
+Create New Customer REQ Check Customer Type
+Check Availability DEPC Create New Customer
+Producing Missing Goods REQ Check Availability
+Getting ready for delivery DEP Sending Confirmation to Customer
+Pack the Goods DEP Getting ready for delivery
+Deliver the Goods DEP Pack the Goods
+Preparing Invoice DEP Deliver the Goods
+Send the Invoice invoice to customer DEP Preparing Invoice
+Check for Payment DEP Send the Invoice invoice to customer
+Closing Order REQ Check for Payment
+Checking the reminders REQ Check for Payment
+Closing Order UNI Checking the reminders
+Dunning Process REQ Checking the reminders
+
+JMP Relations:
+
+Checking the reminders JMP Check for Payment
+This SBMN model is consistent and has at least one valid BPMN realization.
+

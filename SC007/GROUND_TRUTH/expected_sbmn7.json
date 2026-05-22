@@ -1,0 +1,420 @@
+{
+  "nomeProcesso": "Order Fulfillment and Customer Management Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Sales and Logistics",
+  "descricaoBreve": "Process for managing customer validation, order fulfillment, delivery preparation, invoicing, payment verification, and possible dunning.",
+  "Atividades": [
+    {
+      "nome": "Check Customer",
+      "id": "CC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Check Payment History",
+      "id": "CPH1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Check Customer Type",
+      "id": "CCT1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Create New Customer",
+      "id": "CNC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Declining Message",
+      "id": "DM1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Check Availability",
+      "id": "CA1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Sending Confirmation to Customer",
+      "id": "SCC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Producing Missing Goods",
+      "id": "PMG1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Getting Ready for Delivery",
+      "id": "GRD1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Pack the Goods",
+      "id": "PG1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Deliver the Goods",
+      "id": "DG1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Preparing Invoice",
+      "id": "PI1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Send the Invoice to Customer",
+      "id": "SIC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Check for Payment",
+      "id": "CFP1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Closing Order",
+      "id": "CO1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Checking the Reminders",
+      "id": "CTR1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Dunning Process",
+      "id": "DP1",
+      "tipo": "SubProcess"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CPH1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CC1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CCT1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CC1"
+        }
+      ]
+    },
+    {
+      "operador": "XOR",
+      "esquerda": [
+        {
+          "id": "CPH1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CCT1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CNC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CCT1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "DM1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CPH1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "DM1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CCT1"
+        }
+      ]
+    },
+    {
+      "operador": "XOR",
+      "esquerda": [
+        {
+          "id": "DM1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CNC1"
+        }
+      ]
+    },
+    {
+      "operador": "XOR",
+      "esquerda": [
+        {
+          "id": "DM1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CA1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CA1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CPH1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CA1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CNC1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SCC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CA1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "PMG1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CA1"
+        }
+      ]
+    },
+    {
+      "operador": "DEPC",
+      "esquerda": [
+        {
+          "id": "GRD1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "PMG1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "GRD1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SCC1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "PG1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "GRD1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "PI1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "GRD1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "DG1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "PG1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SIC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "PI1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CFP1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "DG1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CFP1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SIC1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CFP1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CTR1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CFP1"
+        }
+      ]
+    },
+    {
+      "operador": "XOR",
+      "esquerda": [
+        {
+          "id": "CO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CTR1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "DP1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CTR1"
+        }
+      ]
+    },
+    {
+      "operador": "JMP",
+      "esquerda": [
+        {
+          "id": "CTR1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CFP1"
+        }
+      ]
+    }
+  ]
+}

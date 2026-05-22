@@ -1,0 +1,42 @@
+{
+  "revision": {
+    "creationDate": "2026-05-19",
+    "isLastRevision": true,
+    "revisionNumber": 1,
+    "elementCounts": {
+      "total": 34,
+      "Task": 17,
+      "Situation": 17,
+      "REQ": 7,
+      "XOR": 1,
+      "DEPC": 1,
+      "DEP": 6,
+      "UNI": 1,
+      "JMP": 1
+    },
+    "connectedness": 100
+  },
+  "model": {
+    "modelId": "12f300e8af",
+    "modelDate": "2026-05-19",
+    "groupName": "BPMN1.1",
+    "naturalLanguage": "en",
+    "modelName": "Order Fulfillment and Customer Management Process",
+    "TimestampModelCollection": "2026-05-19 00:00:00",
+    "modelingLanguage": "sbmn",
+    "directoryId": "1629081267",
+    "numberOfRevisions": 1,
+    "domain": "Sales and Logistics",
+    "version": "1.0",
+    "description": ""
+  },
+  "interview": {
+    "sourceFile": "interview_transcript7.txt",
+    "language": "english",
+    "processName": "Order Fulfillment and Customer Management Process",
+    "processDomain": "Sales and Logistics",
+    "activityCount": 17,
+    "relationCount": 17,
+    "consistencyStatement": "This SBMN model is consistent and has at least one valid BPMN realization."
+  }
+}
