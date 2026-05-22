@@ -20,7 +20,7 @@ SC001/
 ├── description/
 │   └── process_description.txt
 │
-├── reference/
+├── ground_truth/
 │   ├── reference_model.bpmn
 │   ├── expected_sbmn.json
 │   └── scenario_characterization.json
@@ -59,7 +59,7 @@ Contains the textual description of the business process used as the source for 
 
 ---
 
-### Reference
+### ground_truth
 
 Contains the ground-truth artifacts used during evaluation.
 
