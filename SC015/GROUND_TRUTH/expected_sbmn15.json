@@ -1,0 +1,216 @@
+{
+  "nomeProcesso": "Inventory Procurement and Supplier Payment Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Supply Chain Management",
+  "descricaoBreve": "Process for checking inventory, constructing and reviewing a purchase order when stock is below the minimum level, reserving funds, sending the order to the supplier, matching the order, sending packing slip and invoice in parallel, receiving confirmation, and releasing funds.",
+  "Atividades": [
+    {
+      "nome": "Check Inventory",
+      "id": "CI1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Construct Purchase Order",
+      "id": "CPO1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Review Purchase Order",
+      "id": "RPO1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Reserve Funds",
+      "id": "RF1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Send Purchase Order to Supplier",
+      "id": "SPOS1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Match Order",
+      "id": "MO1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Send packing slip",
+      "id": "SPS1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Send Invoice",
+      "id": "SI1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Receive Confirmation",
+      "id": "RC1",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Release Funds",
+      "id": "RLF1",
+      "tipo": "Task"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "CPO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CI1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RPO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CPO1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RF1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "RPO1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SPOS1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "RPO1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "MO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SPOS1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SPS1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "MO1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "SI1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "MO1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "RF1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SPS1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RC1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "SI1"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "RLF1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "RC1"
+        }
+      ]
+    },
+    {
+      "operador": "JMP",
+      "esquerda": [
+        {
+          "id": "RPO1"
+        }
+      ],
+      "direita": [
+        {
+          "id": "CI1"
+        }
+      ]
+    }
+  ]
+}

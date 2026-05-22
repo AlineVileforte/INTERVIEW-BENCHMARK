@@ -1,0 +1,213 @@
+{
+  "nomeProcesso": "Go to the Cinema Process",
+  "versao": "1.0",
+  "dominioAplicacao": "Go to the Cinema Process",
+  "descricaoBreve": "",
+  "Atividades": [
+    {
+      "nome": "Entrar a la pagina de Hoyts",
+      "id": "sid-4D6D81F0-0D3C-4AF8-A6F9-F6FA4ABC0F85",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Buscar una pelicula que me gusta en un horario que me convenga",
+      "id": "sid-1397AAD6-1471-4800-8F5C-B03D5CE9A02F",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Hay lugar en esa pelicula",
+      "id": "sid-B461FAA5-0F00-4D49-A310-9B17091255D9",
+      "tipo": "Gateway"
+    },
+    {
+      "nome": "Buscar la tarjeta \"La Nacion\" para el descuento",
+      "id": "sid-CB2CB42A-E9B6-4F08-A4C3-A77B2DF3F3B8",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Buscar la tarjeta Citi para el descuento",
+      "id": "sid-B013267D-F825-4805-AFD8-13D90941D07D",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Pagar las entradas mediante el sitio",
+      "id": "sid-AFE99696-A147-44BC-9E02-22D3908E5204",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Esperar que llegue la hora de la pelicula",
+      "id": "sid-519F9E41-EE10-4C2D-B985-DA2836EFC133",
+      "tipo": "Event"
+    },
+    {
+      "nome": "Manejar hasta el cine",
+      "id": "sid-6D000C36-8BE1-4DFB-B534-17C03A7D92F2",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Darle las entradas al boletero",
+      "id": "sid-2F73BE5D-C6F7-45BA-8DB2-8011841382C7",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Sentarme en la sala",
+      "id": "sid-10B32258-C6A3-4248-A6CF-E497A72A743C",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Comprar pochoclo",
+      "id": "sid-806263CD-9FA7-4EC8-A3E0-E6BEE91E9082",
+      "tipo": "Task"
+    },
+    {
+      "nome": "Imprimirlas",
+      "id": "sid-C16CB893-3D2D-4A2B-8C6E-36A4B0785176",
+      "tipo": "Task"
+    }
+  ],
+  "Situacoes": [
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-806263CD-9FA7-4EC8-A3E0-E6BEE91E9082"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-6D000C36-8BE1-4DFB-B534-17C03A7D92F2"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-6D000C36-8BE1-4DFB-B534-17C03A7D92F2"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-519F9E41-EE10-4C2D-B985-DA2836EFC133"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-C16CB893-3D2D-4A2B-8C6E-36A4B0785176"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-AFE99696-A147-44BC-9E02-22D3908E5204"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-CB2CB42A-E9B6-4F08-A4C3-A77B2DF3F3B8"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-B461FAA5-0F00-4D49-A310-9B17091255D9"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-10B32258-C6A3-4248-A6CF-E497A72A743C"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-2F73BE5D-C6F7-45BA-8DB2-8011841382C7"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-B461FAA5-0F00-4D49-A310-9B17091255D9"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-1397AAD6-1471-4800-8F5C-B03D5CE9A02F"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-519F9E41-EE10-4C2D-B985-DA2836EFC133"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-C16CB893-3D2D-4A2B-8C6E-36A4B0785176"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-1397AAD6-1471-4800-8F5C-B03D5CE9A02F"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-4D6D81F0-0D3C-4AF8-A6F9-F6FA4ABC0F85"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-2F73BE5D-C6F7-45BA-8DB2-8011841382C7"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-806263CD-9FA7-4EC8-A3E0-E6BEE91E9082"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-B013267D-F825-4805-AFD8-13D90941D07D"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-CB2CB42A-E9B6-4F08-A4C3-A77B2DF3F3B8"
+        }
+      ]
+    },
+    {
+      "operador": "DEP",
+      "esquerda": [
+        {
+          "id": "sid-AFE99696-A147-44BC-9E02-22D3908E5204"
+        }
+      ],
+      "direita": [
+        {
+          "id": "sid-CB2CB42A-E9B6-4F08-A4C3-A77B2DF3F3B8"
+        }
+      ]
+    }
+  ]
+}
